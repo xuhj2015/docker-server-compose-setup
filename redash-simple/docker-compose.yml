@@ -1,10 +1,7 @@
 version: "2"
 x-redash-service: &redash-service
   image: redash/redash:8.0.0.b32245
-  depends_on:
-    - postgres
-    - redis
-  env_file: /Users/xuhj/Documents/Docker/data/redash/env
+  env_file: /Users/xuhj/Documents/Docker/data/redash-simple/env
   restart: always
 services:
   server:
@@ -32,23 +29,11 @@ services:
     environment:
       QUEUES: "queries"
       WORKERS_COUNT: 2
-  redis:
-    image: redis:5.0-alpine
-    ports:
-      - "6379:6379"
-    restart: always
-  postgres:
-    image: postgres:9.6-alpine
-    ports:
-      - "5432:5432"
-    env_file: /Users/xuhj/Documents/Docker/data/redash/env
-    volumes:
-      - "/Users/xuhj/Documents/Docker/data/redash/postgres-data:/var/lib/postgresql/data"
-    restart: always
+  
   nginx:
     image: redash/nginx:latest
     ports:
-      - "80:80"
+      - "18080:80"
     depends_on:
       - server
     links:

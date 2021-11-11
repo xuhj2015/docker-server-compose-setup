@@ -2,7 +2,7 @@
 # This script setups dockerized Redash on Mac OS.
 set -eu
 
-REDASH_BASE_PATH=/Users/xuhj/Documents/Docker/data/redash
+REDASH_BASE_PATH=/Users/xuhj/Documents/Docker/data/redash-all
 
 create_directories() {
     if [[ ! -e $REDASH_BASE_PATH ]]; then

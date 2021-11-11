@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  postgis: 
+    image: postgis/postgis
+    container_name: postgis
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - /Users/xuhj/Documents/Docker/data/postgis/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

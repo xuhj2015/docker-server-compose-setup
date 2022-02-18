@@ -4,8 +4,8 @@ set -eu
 
 REDASH_BASE_PATH=/Users/xuhj/Documents/Docker/data/redash-simple
 
-REDASH_REDIS_URL="redis://192.168.1.100:6379/0"
-REDASH_DATABASE_URL="postgresql://postgres:123456@192.168.1.100/redash"
+REDASH_REDIS_URL="redis://192.168.1.211:6379/0"
+REDASH_DATABASE_URL="postgresql://postgres:123456@192.168.1.211/redash"
 
 create_directories() {
     if [[ ! -e $REDASH_BASE_PATH ]]; then

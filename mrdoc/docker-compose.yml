@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mrdoc:
+    image: jonnyan404/mrdoc-alpine
+    container_name: mrdoc
+    # restart: always
+    ports:
+      - "10086:10086"
+    volumes:
+      - /Users/xuhj/Documents/Docker/setup/mrdoc/config:/app/MrDoc/config
+      - /Users/xuhj/Documents/Docker/data/mrdoc/media:/app/MrDoc/media

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  neo4j:
+    image: neo4j:3.4.7
+    volumes:
+      - /Users/xuhj/Documents/Docker/data/neo4j/conf:/var/lib/neo4j/conf  #数据卷，前面是宿主机目录，后面是容器目录
+      - /Users/xuhj/Documents/Docker/data/neo4j/mnt:/var/lib/neo4j/import
+      - /Users/xuhj/Documents/Docker/data/neo4j/plugins:/plugins
+      - /Users/xuhj/Documents/Docker/data/neo4j/data:/data
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_dbms_memory_heap_maxSize=4G
+      - NEO4J_AUTH=neo4j/123456  #修改默认用户密码

@@ -1,0 +1,22 @@
+version: "2.2"
+networks:
+  internal_network:
+services:
+  dzzoffice:
+    restart: always
+    networks:
+      - internal_network
+    image: imdevops/dzzoffice:latest
+    expose:
+      - "80"
+    ports:
+      - "10010:80"
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    restart: always
+    networks:
+      - internal_network
+    expose:
+      - "80"
+    ports:
+      - "8000:80"

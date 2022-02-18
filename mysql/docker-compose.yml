@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    image: "mysql:5.5"
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_USER: 'mysql'
+      MYSQL_PASS: '123456'
+    restart: always
+    volumes:
+      - "/Users/xuhj/Documents/Docker/data/mysql/db:/var/lib/mysql"
+      - "/Users/xuhj/Documents/Docker/setup/mysql/my.cnf:/etc/my.cnf"
+    ports:
+      - "3306:3306"
